@@ -1,0 +1,40 @@
+@main-color: black;
+@main-text-color: white;
+@main-width: 1280px;
+
+@font-face {
+  font-family: AkzidenzGroteskPro-Light;
+  src: url("AkzidenzGroteskPro-Light.woff2");
+  src: url("AkzidenzGroteskPro-Light.woff2");
+}
+
+@font-face {
+  font-family: NewBaskervilleITC;
+  src: url("NWB56.woff2");
+  src: url("NWB56.woff");
+}
+
+.visually-hidden {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  padding:0 !important;
+  border:0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden;
+}
+
+html {
+  padding: 0;
+  margin: 0 auto;
+  width: @main-width;
+
+  background-color: @main-color;
+  color: @main-text-color;
+}
+
+body {
+  margin: 0 auto;
+  width: @main-width;
+}
