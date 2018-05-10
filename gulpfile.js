@@ -74,7 +74,9 @@ gulp.task('style', function () {
 
 gulp.task('bundle', function () {
   return gulp.src(INITIAL.js)
-    .pipe(webpack())
+    .pipe(webpack({
+      devtool: 'inline-source-map'
+    }))
     .pipe(rename('index.js'))
     .pipe(gulp.dest(PATH.build))
     .pipe(browsersync.stream())
