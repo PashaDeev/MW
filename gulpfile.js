@@ -12,7 +12,7 @@ const webpack = require('webpack-stream');
 
 const INITIAL = {
   pug: './pug/screens/*.pug',
-  less: './less/main.less',
+  less: './less/index.less',
   js: './js/index.js'
 };
 
