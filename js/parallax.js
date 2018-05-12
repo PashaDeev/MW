@@ -26,9 +26,9 @@ export default class parallax {
   }
 
   getFixedCoords() {
-    if (screen.height > this.block.scrollHeight) {
+    if (window.innerHeight > this.block.scrollHeight) {
       const coords = {};
-      coords.top = (screen.height - this.block.scrollHeight) / 2;
+      coords.top = (window.innerHeight - this.block.scrollHeight) / 2;
       coords.left = this.getElemCoords(this.block).left;
       return coords;
     }
