@@ -35,7 +35,7 @@ const PATH = {
 
 const COPY = {
   img: './img/**',
-  fonts: './fonts/**/*.{woff,woff2}'
+  fonts: './fonts/**/*.{woff,woff2,otf}'
 };
 
 gulp.task('default', ['build'], function () {
@@ -74,6 +74,7 @@ gulp.task('style', function () {
 
 gulp.task('bundle', function () {
   return gulp.src(INITIAL.js)
+    .pipe(plumber())
     .pipe(webpack({
       devtool: 'inline-source-map'
     }))

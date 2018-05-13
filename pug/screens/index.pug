@@ -2,6 +2,7 @@ doctype html
 html(lang="ru")
     head
         link(rel="stylesheet" href="main.min.css")
+        meta(charset="UTF-8")
     body
         header.main-header
             nav.main-nav
@@ -23,9 +24,9 @@ html(lang="ru")
                   | История
                 div.history__container.moving-block.moving-block--history
                     div.history__image-container--left
-                        img.hisory__image(src="1.jpg")
-                        img.history__image(src="2.jpg")
-                        img.history__image(src="4.jpg")
+                        img.hisory__image.moved-image(src="1.jpg" width="284" height="190")
+                        img.history__image.moved-image(src="2.jpg" widht="113" height="76")
+                        img.history__image.moved-image(src="4.jpg" widht="281" height="188")
                     div.history__text
                         h3.history__title--inner
                             | История
@@ -51,5 +52,39 @@ html(lang="ru")
                             литейный цех. Все начиналось с алюминия и керамики,
                             потом появились камни и оловянная бронза.
                     div.history__image-container--right.miving-image-block
-                        img(src="3.jpg")
+                        img.history-image.moved-image(src="3.jpg" widht="285" height="427")
+            section.main__history.history
+                h2.history__title.visually-hidden
+                    | История
+                div.history__container.moving-block.moving-block--history
+                    div.history__image-container--left
+                        img.hisory__image.moved-image(src="1.jpg" width="284" height="190")
+                        img.history__image.moved-image(src="2.jpg" widht="113" height="76")
+                        img.history__image.moved-image(src="4.jpg" widht="281" height="188")
+                    div.history__text
+                        h3.history__title--inner
+                            | История
+                        pre.
+                            Дуэт художников-алхимиков <span class="history__text--italic">Александра Ольховского</span>
+                            и <span class="history__text--italic">Анны Павловой</span> постоянно экспериментирует с матер-
+                            иалами и творит свою «погоду» из необработанных кам-
+                            ней, природных металлов,гипса, цемента, пластика.
+                            У марки цельный стиль, но пыт-ливый взгяд найдет раз-
+                            ницу. Анины работы — нежные, аккуратненькие цветочки;
+                            ее руками сделана вся керамика, в том числе фарфоро-вые
+                            елочные игрушки в виде персонажей «Теремка», броши.
+                            На Сашиной совести более брутальные вещи:
+                            все украшения с камнями, серьги-сперматозоиды. Место
+                            для своего шоу-рума они выбрали удивительно похожее на
+                            свои украшения. На территории завода <span class="history__text--italic">НИИДАР</span> сни-мают
+                            помещения, офисы и производства, но то, что вы ищете,
+                            снаружи напоминает пещеру горного короля. Внутри
+                            сполна виден талант <span class="history__text--italic">MW</span> преобразовывать куски беспри-
+                            зорного вещества в дикую красоту: строительный мусор
+                            складывается в интерьерные решения. Первые кольца
+                            <span class="history__text--italic">Mineral Weather</span> художники делали в гараже, устроив в нем
+                            литейный цех. Все начиналось с алюминия и керамики,
+                            потом появились камни и оловянная бронза.
+                    div.history__image-container--right.miving-image-block
+                        img.moved-image(src="3.jpg" widht="285" height="427")
         script(src="index.js")
