@@ -32,12 +32,23 @@ export default class controller {
 
   start() {
     this.blocksInit();
-    this.imgInit();
+    //this.imgInit();
 
     document.addEventListener(`scroll`, () => {
       for (let item of this.blokArr) {
-        item.moveParallaxBlock();
+        if (window.pageYOffset > item._startParallax) {
+
+          if (window.pageYOffset > item._startParallax && window.pageYOffset < item._endParallax) {
+            item.startParallax();
+          }
+    
+          if (window.pageYOffset > item._endParallax) {
+            item.endParallax();
+          }
+        } else {
+          item.cancelParallax();
+        }
       }
-    });
+      });
   }
 }

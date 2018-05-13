@@ -62,11 +62,15 @@ export default class parallax {
     this.block.style.position = `static`;
   }
 
-  moveParallaxBlock() {
+  moveParallaxBlock(callbackImg) {
     if (window.pageYOffset > this._startParallax) {
 
       if (window.pageYOffset > this._startParallax && window.pageYOffset < this._endParallax) {
         this.startParallax();
+        for (let item of callbackImg) {
+          item(this.gitElemCoords(this.scrollingBlock).top);  
+        }
+        
       }
 
       if (window.pageYOffset > this._endParallax) {
