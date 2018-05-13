@@ -9,6 +9,7 @@ const clean = require('gulp-clean');
 const gulpsync = require('gulp-sync')(gulp);
 const browsersync = require('browser-sync').create();
 const webpack = require('webpack-stream');
+const named = require ('vinyl-named');
 
 const INITIAL = {
   pug: './pug/screens/*.pug',
@@ -75,10 +76,10 @@ gulp.task('style', function () {
 gulp.task('bundle', function () {
   return gulp.src(INITIAL.js)
     .pipe(plumber())
+    .pipe(named())
     .pipe(webpack({
-      devtool: 'inline-source-map'
+      devtool: 'source-map'
     }))
-    .pipe(rename('index.js'))
     .pipe(gulp.dest(PATH.build))
     .pipe(browsersync.stream())
 });
