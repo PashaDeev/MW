@@ -1,19 +1,35 @@
 
+import ImgMove from './img-move';
+
 export default class parallax {
-  constructor(block, size) {
+  constructor(block, size, model, number) {
     this.block = block;
+    this.blockNumber = number;
+    this.model = model;
     this.scrollingBlock = this.block.parentElement;
     this.scrollingBlockSize = size;
     this._fixedCoords = this.getFixedCoords();
     this._startParallax = this.getStartParallaxCoords();
+    this.images = [];
 
     this.setBoxSize();
+    this.imgInit();
 
     this._endParallax = this.getEndParallaxCoords();
   }
 
   setBoxSize() {
     this.scrollingBlock.style.height = this.scrollingBlockSize + `px`;
+  }
+
+  imgInit() {
+    let i = 0;
+    this.images = this.block.querySelectorAll(`.moved-image`);
+    this.imageList = [];
+    for (let item of this.images) {
+      this.imageList[i] = new ImgMove(item, this.model[i], this.scrollingBlockSize);
+      i++;
+    }
   }
 
   getElemCoords(elem) {
@@ -60,24 +76,5 @@ export default class parallax {
 
   cancelParallax() {
     this.block.style.position = `static`;
-  }
-
-  moveParallaxBlock(callbackImg) {
-    if (window.pageYOffset > this._startParallax) {
-
-      if (window.pageYOffset > this._startParallax && window.pageYOffset < this._endParallax) {
-        this.startParallax();
-        for (let item of callbackImg) {
-          item(this.gitElemCoords(this.scrollingBlock).top);  
-        }
-        
-      }
-
-      if (window.pageYOffset > this._endParallax) {
-        this.endParallax();
-      }
-    } else {
-      this.cancelParallax();
-    }
   }
 }

@@ -50,6 +50,7 @@ export default class ImgMove {
       this.img.style.top = this.path.y + `px`;
       this.img.width = this.model.width;
       this.img.height = this.model.height;
+      this.img.style.zIndex = this.model.zIndex;
     }
   }
 
@@ -60,5 +61,10 @@ export default class ImgMove {
       top: box.top + pageYOffset,
       left: box.left + pageXOffset
     }
+  }
+
+  move(init) {
+    this.img.style.top = path.y - (coef.y * init);
+    this.img.style.left = path.x - (coef.x * init);
   }
 }
