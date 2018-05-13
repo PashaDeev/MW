@@ -1,55 +1,47 @@
 
 export default class ImgMove {
-  constructor(img, model, size) {
+  constructor(img, model, size, startCoord) {
     this.img = img;
-    this.intialSize = {
+    this.startCoord = startCoord;
+    this.initialSize = {
       width: this.img.width,
       height: this.img.height
     };
+    this.duration = size;
     this.model = model;
     this.scrollDuration = size;
     this.shift = this.getShift();
     this.path = {
       x: this.model.x - this.shift.x,
       y: this.model.y - this.shift.y
-    }
-    //this.coof = this.getCoof();
+    };
+    this.coef = {
+      x: this.path.x / this.scrollDuration,
+      y: this.path.y / this.scrollDuration,
+      width: this.model.width / this.img.width,
+      height: this.model.height / this.img.height,
+      scrollWidth: (this.model.width - this.initialSize.width) / this.scrollDuration,
+      scrollHeight: (this.model.height - this.initialSize.height) / this.scrollDuration
+    };
 
     this.init();
   }
 
   getShift() {
-    if (!this.model.absolute) {
-      const parentCoords = this.getCoords(this.img.parentElement);
-      const imgCoords = this.getCoords(this.img);
+    const parentCoords = this.getCoords(this.img.parentElement);
+    const imgCoords = this.getCoords(this.img);
 
-      return {
-        x: imgCoords.left - parentCoords.left,
-        y: imgCoords.top - parentCoords.top
-      }
-    } else {
-      this.img.style.position = `static`;
-
-      const parentCoords = this.getCoords(this.img.parentElement);
-      const imgCoords = this.getCoords(this.img);
-
-      this.img.style.position = `absolute`;
-
-      return {
-        x: imgCoords.left - parentCoords.left,
-        y: imgCoords.top - parentCoords.top
-      }
+    return {
+      x: imgCoords.left - parentCoords.left,
+      y: imgCoords.top - parentCoords.top
     }
-    
   }
 
   init() {
     if (this.img && this.model) {
-      this.img.style.position = `relative`;
-      this.img.style.left = this.path.x + `px`;
-      this.img.style.top = this.path.y + `px`;
-      this.img.width = this.model.width;
-      this.img.height = this.model.height;
+      this.img.position = `relative`;
+      this.img.style.transform = `translate(${this.path.x}px, ${this.path.y}px) 
+                                  scale(${this.coef.width}, ${this.coef.height})`;
       this.img.style.zIndex = this.model.zIndex;
     }
   }
@@ -63,8 +55,13 @@ export default class ImgMove {
     }
   }
 
-  move(init) {
-    this.img.style.top = path.y - (coef.y * init);
-    this.img.style.left = path.x - (coef.x * init);
+  move() {
+    let translateX = this.coef.x * (window.pageYOffset - this.startCoord);
+    let translateY = this.coef.y * (window.pageYOffset - this.startCoord);
+    let scalteX = this.coef.scrollWidth * (window.pageYOffset - this.startCoord);
+    let scaleY = this.coef.scrollHeight * (window.pageYOffset - this.startCoord);
+    this.img.style.transform = 
+         `translate(${translateX}px, ${translateY}px)
+         scale(${scaleY}, ${scaleY})`;
   }
 }

@@ -4,6 +4,7 @@ import ImgMove from './img-move';
 export default class parallax {
   constructor(block, size, model, number) {
     this.block = block;
+    this.blockCoords = this.getElemCoords(this.block);
     this.blockNumber = number;
     this.model = model;
     this.scrollingBlock = this.block.parentElement;
@@ -27,7 +28,7 @@ export default class parallax {
     this.images = this.block.querySelectorAll(`.moved-image`);
     this.imageList = [];
     for (let item of this.images) {
-      this.imageList[i] = new ImgMove(item, this.model[i], this.scrollingBlockSize);
+      this.imageList[i] = new ImgMove(item, this.model[i], this.scrollingBlockSize, this.blockCoords.top);
       i++;
     }
   }
@@ -67,6 +68,10 @@ export default class parallax {
     this.block.style.position = `fixed`;
     this.block.style.top = this._fixedCoords.top + `px`;
     this.block.style.left = this._fixedCoords.left + `px`;
+
+    for (let item of this.imageList) {
+      item.move();
+    }
   }
 
   endParallax() {
