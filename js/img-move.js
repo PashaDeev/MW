@@ -3,10 +3,6 @@ export default class ImgMove {
   constructor(img, model, size, startCoord) {
     this.img = img;
     this.startCoord = startCoord;
-    this.initialSize = {
-      width: this.img.width,
-      height: this.img.height
-    };
     this.model = model;
     this.scrollDuration = size;
     this.shift = this.getShift();
@@ -19,9 +15,10 @@ export default class ImgMove {
       y: this.path.y / this.scrollDuration,
       width: this.model.width / this.img.width,
       height: this.model.height / this.img.height,
-      scrollWidth: Math.abs(this.model.width - this.initialSize.width) / this.scrollDuration,
-      scrollHeight: Math.abs(this.model.height - this.initialSize.height) / this.scrollDuration
     };
+
+    this.coef.scrollWidth = Math.abs(1 - this.coef.width) / this.scrollDuration;
+    this.coef.scrollHeight = Math.abs(1 - this.coef.height) / this.scrollDuration;
 
     this.init();
   }
@@ -55,10 +52,11 @@ export default class ImgMove {
   move() {
     let translateX = this.path.x - this.coef.x * (window.pageYOffset - this.startCoord);
     let translateY = this.path.y - this.coef.y * (window.pageYOffset - this.startCoord);
-    let scaleX = this.coef.scrollWidth * (window.pageYOffset - this.startCoord);
-    let scaleY = this.coef.scrollHeight * (window.pageYOffset - this.startCoord);
+    let scaleX = this.coef.width - this.coef.scrollWidth * (window.pageYOffset - this.startCoord);
+    let scaleY = this.coef.height - this.coef.scrollHeight * (window.pageYOffset - this.startCoord);
     this.img.style.transform = 
-         `translate(${translateX}px, ${translateY}px)`;
-    //scale(${scaleX}, ${scaleY})
+         `translate(${translateX}px, ${translateY}px)
+          scale(${scaleX}, ${scaleY})`;
+    //
   }
 }
