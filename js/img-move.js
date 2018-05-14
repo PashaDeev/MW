@@ -7,7 +7,6 @@ export default class ImgMove {
       width: this.img.width,
       height: this.img.height
     };
-    this.duration = size;
     this.model = model;
     this.scrollDuration = size;
     this.shift = this.getShift();
@@ -20,8 +19,8 @@ export default class ImgMove {
       y: this.path.y / this.scrollDuration,
       width: this.model.width / this.img.width,
       height: this.model.height / this.img.height,
-      scrollWidth: (this.model.width - this.initialSize.width) / this.scrollDuration,
-      scrollHeight: (this.model.height - this.initialSize.height) / this.scrollDuration
+      scrollWidth: Math.abs(this.model.width - this.initialSize.width) / this.scrollDuration,
+      scrollHeight: Math.abs(this.model.height - this.initialSize.height) / this.scrollDuration
     };
 
     this.init();
@@ -38,12 +37,10 @@ export default class ImgMove {
   }
 
   init() {
-    if (this.img && this.model) {
       this.img.position = `relative`;
       this.img.style.transform = `translate(${this.path.x}px, ${this.path.y}px) 
                                   scale(${this.coef.width}, ${this.coef.height})`;
       this.img.style.zIndex = this.model.zIndex;
-    }
   }
 
   getCoords(elem) {
@@ -56,12 +53,12 @@ export default class ImgMove {
   }
 
   move() {
-    let translateX = this.coef.x * (window.pageYOffset - this.startCoord);
-    let translateY = this.coef.y * (window.pageYOffset - this.startCoord);
-    let scalteX = this.coef.scrollWidth * (window.pageYOffset - this.startCoord);
+    let translateX = this.path.x - this.coef.x * (window.pageYOffset - this.startCoord);
+    let translateY = this.path.y - this.coef.y * (window.pageYOffset - this.startCoord);
+    let scaleX = this.coef.scrollWidth * (window.pageYOffset - this.startCoord);
     let scaleY = this.coef.scrollHeight * (window.pageYOffset - this.startCoord);
     this.img.style.transform = 
-         `translate(${translateX}px, ${translateY}px)
-         scale(${scaleY}, ${scaleY})`;
+         `translate(${translateX}px, ${translateY}px)`;
+    //scale(${scaleX}, ${scaleY})
   }
 }

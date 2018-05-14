@@ -4,16 +4,14 @@ export default class controller {
   constructor(blocks, model) {
     this.model = model;
     this.blocks = blocks;
-    this.image = [];
     //this.svg = [];
   }
 
   blocksInit() {
     this.blokArr = [];
-    this.imgArr = [];
     let count = 0;
     for (let item of this.blocks) {
-      this.blokArr[count] = new parallax(item, 2000, this.model[count], count);
+      this.blokArr[count] = new parallax(item, 2000, this.model[count]);
       ++count;
     }
     this.blokArr;
