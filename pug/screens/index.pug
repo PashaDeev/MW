@@ -19,12 +19,12 @@ html(lang="ru")
             div.main-header__video
                 video
         main.main
-            section.main__history.history
+            section.main__history.history.history--one
                 h2.history__title.visually-hidden
                   | История
                 div.history__container.moving-block.moving-block--history
                     div.history__image-container--left
-                        img.hisory__image.moved-image(src="1.jpg" width="284" height="190")
+                        img.history__image.moved-image(src="1.jpg" width="284" height="190")
                         img.history__image.moved-image(src="2.jpg" widht="113" height="76")
                         img.history__image.moved-image(src="4.jpg" widht="281" height="188")
                     div.history__text
@@ -53,38 +53,55 @@ html(lang="ru")
                             потом появились камни и оловянная бронза.
                     div.history__image-container--right.miving-image-block
                         img.history-image.moved-image(src="3.jpg" widht="285" height="427")
-            section.main__history.history
-                h2.history__title.visually-hidden
-                    | История
+            section.main__history.history.history--two
                 div.history__container.moving-block.moving-block--history
-                    div.history__image-container--left
-                        img.hisory__image.moved-image(src="1.jpg" width="284" height="190")
-                        img.history__image.moved-image(src="2.jpg" widht="113" height="76")
-                        img.history__image.moved-image(src="4.jpg" widht="281" height="188")
                     div.history__text
-                        h3.history__title--inner
-                            | История
                         pre.
-                            Дуэт художников-алхимиков <span class="history__text--italic">Александра Ольховского</span>
-                            и <span class="history__text--italic">Анны Павловой</span> постоянно экспериментирует с матер-
-                            иалами и творит свою «погоду» из необработанных кам-
-                            ней, природных металлов,гипса, цемента, пластика.
-                            У марки цельный стиль, но пыт-ливый взгяд найдет раз-
-                            ницу. Анины работы — нежные, аккуратненькие цветочки;
-                            ее руками сделана вся керамика, в том числе фарфоро-вые
-                            елочные игрушки в виде персонажей «Теремка», броши.
-                            На Сашиной совести более брутальные вещи:
-                            все украшения с камнями, серьги-сперматозоиды. Место
-                            для своего шоу-рума они выбрали удивительно похожее на
-                            свои украшения. На территории завода <span class="history__text--italic">НИИДАР</span> сни-мают
-                            помещения, офисы и производства, но то, что вы ищете,
-                            снаружи напоминает пещеру горного короля. Внутри
-                            сполна виден талант <span class="history__text--italic">MW</span> преобразовывать куски беспри-
-                            зорного вещества в дикую красоту: строительный мусор
-                            складывается в интерьерные решения. Первые кольца
-                            <span class="history__text--italic">Mineral Weather</span> художники делали в гараже, устроив в нем
-                            литейный цех. Все начиналось с алюминия и керамики,
-                            потом появились камни и оловянная бронза.
-                    div.history__image-container--right.miving-image-block
-                        img.moved-image(src="3.jpg" widht="285" height="427")
-        script(src="index.js")
+                            <span class="history__text--italic">Саша:</span> С Аней мы познакомились в моей
+                            студии на <span class="history__text--italic">Арме</span> в 2010 году — и через год
+                            создали <span class="history__text--italic">Mineral Weather.</span> Я учился на теле-
+                            визионного инженера, работал пять лет
+                            в новостях, сутки через трое, куча свобод-
+                            ного времени была. Было время творить.
+                            Название было придумано в аппаратной
+                            программы <span class="history__text--italic">Время</span> ещё в 2009 году, тогда
+                            я сделал кучу наброс-ков в блокноте.
+                            Название вообще никак не связано с ми-
+                            нералами — оно, скорей, про
+                            минеральную воду. Я даже придумал
+                            рекламу, которую мы пока так и не
+                            сделали: девушка откры-вает бутылку
+                            минералки, а на ней этикетка <span class="history__text--italic">Mineral
+                            Weather.</span> Всю жизнь считал себя худож-
+                            ником, смотрел в детстве видео <span class="history__text--italic">Марата
+                            Ка</span> по телеку, кучу всего рисовал, но не
+                            учился никогда в сфере искусства, кроме
+                            курсов МАРХИ, на которые так
+                            и не доходил.
+                    div.history__image-container
+                        img.history__image.moved-image(src="5.jpg" width="213" height="143")
+                        img.history__image.moved-image(src="6.jpg" width="210" height="140")
+                    div.history__text
+                        pre.
+                            <span class="history__text--italic">Аня:</span> Я закончила керамику в <span class="history__text--italic">МГХПА
+                            имени Строганова</span> в 2014 году. Шесть лет
+                            там училась и постоянно была по уши
+                            в глине. Когда мы с Сашей встретились,
+                            стало сразу же понятно, что нам нужно
+                            делать что-то вместе. Я владела техникой
+                            и знанием технологий, а у Саши был беско-
+                            нечный поток идей и энергии. После того
+                            как студия на <span class="history__text--italic">Арме</span> распалась, Саша
+                            пытал-ся придумать какое-то дело,
+                            которое бы могло помочь
+                            самовыражаться и прино-сило доход.
+                            Ювелирка казалась макси-мально
+                            компактным занятием. Не было денег
+                            снимать помещение, работать при-
+                            ходилось дома. Саша тогда лепил
+                            смешные кольца из пластилина, потом
+                            начал интересоваться технологией, купил
+                            воск специальный ювелирный, подсунул
+                            мне его, сказал: <span class="history__text--italic">«Делай — у тебя
+                            получится».</span>
+        //script(src="index.js")
