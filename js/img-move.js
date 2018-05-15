@@ -1,4 +1,6 @@
 
+import Svg from './svg';
+
 export default class ImgMove {
   constructor(img, model, size, startCoord) {
     this.img = img;
@@ -20,6 +22,10 @@ export default class ImgMove {
     this.coef.scrollWidth = Math.abs(1 - this.coef.width) / this.scrollDuration;
     this.coef.scrollHeight = Math.abs(1 - this.coef.height) / this.scrollDuration;
 
+    if (this.model.svg) {
+    this.svg = new Svg(this.img, this.model.svg, this.scrollDuration, this.startCoord);
+    this.svg.initMask();
+    }
     this.init();
   }
 
@@ -57,6 +63,9 @@ export default class ImgMove {
     this.img.style.transform = 
          `translate(${translateX}px, ${translateY}px)
           scale(${scaleX}, ${scaleY})`;
-    //
+
+    if (this.svg) {
+        this.svg.maskMove();
+    }
   }
 }
