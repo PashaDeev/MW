@@ -14,7 +14,7 @@ export default class svg {
     getPath() {
         return this.mask.start.map((item, i) => {
                  return item.map((item, j) => {
-                    return Math.abs(item - this.mask.end[i][j]);
+                    return item - this.mask.end[i][j];
                  });
                 });
     }
