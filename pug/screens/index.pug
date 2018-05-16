@@ -4,182 +4,20 @@ html(lang="ru")
         link(rel="stylesheet" href="main.min.css")
         meta(charset="UTF-8")
     body
-        header.main-header
-            nav.main-nav
-                ul.main-nav__list.nav-list
-                    li.nav-list__item
-                        a.nav-list__link(href="#")
-                            | История
-                    li.nav-list__item
-                        a.nav-list__link(href="#")
-                            | Коллекции
-                    li.nav-list__item
-                        a.nav-list__link(href="#")
-                            | Контакты
-            div.main-header__video
-                video
+        include header/header
         main.main
-            section.main__history.history.history--one
-                h2.history__title.visually-hidden
-                  | История
-                div.history__container.moving-block.moving-block--history
-                    div.history__image-container--left
-                        img.history__image.moved-image(src="1.jpg" width="284" height="190")
-                        img.history__image.moved-image(src="2.jpg" widht="113" height="76")
-                        img.history__image.moved-image(src="4.jpg" widht="281" height="188")
-                    div.history__text
-                        h3.history__title--inner
-                            | История
+            include history/history-one
 
-                        pre.
-                            Дуэт художников-алхимиков <span class="history__text--italic">Александра Ольховского</span>
-                            и <span class="history__text--italic">Анны Павловой</span> постоянно экспериментирует с матер-
-                            иалами и творит свою «погоду» из необработанных кам-
-                            ней, природных металлов, гипса, цемента, пластика.
-                            У марки цельный стиль, но пытливый взгяд найдет раз-
-                            ницу. Анины работы — нежные, аккуратненькие
-                            цветочки; ее руками сделана вся керамика, в том числе
-                            фарфоровые елочные игрушки в виде персонажей
-                            «Теремка», броши. На Сашиной совести более бру-
-                            тальные вещи: все украшения с камнями, серьги-
-                            сперматозоиды. Место для своего шоурума они выбрали
-                            удивительно похожее на свои украшения. На тер-
-                            ритории завода <span class="history__text--italic">НИИДАР</span> снимают помещения, офисы
-                            и производства, но то, что вы ищете, снаружи напоми-
-                            нает пещеру горного короля. Внутри сполна виден
-                            талант <span class="history__text--italic">MW</span> преобразовывать куски беспризорного
-                            вещества в дикую красоту: строительный мусор скла-
-                            дывается в интерьерные решения. Первые кольца
-                            <span class="history__text--italic">Mineral Weather</span> художники делали в гараже, устроив
-                            в нем литейный цех. Все начиналось с алюминия
-                            и керамики, потом появились камни и оловянная бронза.
-                    div.history__image-container--right.miving-image-block
-                        img.history-image.moved-image(src="3.jpg" widht="285" height="427")
-            section.main__history.history.history--two
-                div.history__container.moving-block.moving-block--history
-                    div.history__text
-                        pre.
-                            <span class="history__text--italic">Саша:</span> С Аней мы познакомились в моей
-                            студии на <span class="history__text--italic">Арме</span> в 2010 году — и через год
-                            создали <span class="history__text--italic">Mineral Weather.</span> Я учился на теле-
-                            визионного инженера, работал пять лет
-                            в новостях, сутки через трое, куча свобод-
-                            ного времени была. Было время творить.
-                            Название было придумано в аппаратной
-                            программы <span class="history__text--italic">Время</span> ещё в 2009 году, тогда
-                            я сделал кучу наброс-ков в блокноте.
-                            Название вообще никак не связано с ми-
-                            нералами — оно, скорей, про
-                            минеральную воду. Я даже придумал
-                            рекламу, которую мы пока так и не
-                            сделали: девушка откры-вает бутылку
-                            минералки, а на ней этикетка <span class="history__text--italic">Mineral
-                            Weather.</span> Всю жизнь считал себя худож-
-                            ником, смотрел в детстве видео <span class="history__text--italic">Марата
-                            Ка</span> по телеку, кучу всего рисовал, но не
-                            учился никогда в сфере искусства, кроме
-                            курсов МАРХИ, на которые так
-                            и не доходил.
-                    div.history__image-container
-                        img.history__image.moved-image(src="5.jpg" width="213" height="143")
-                        img.history__image.moved-image(src="6.jpg" width="210" height="140")
-                    div.history__text
-                        pre.
-                            <span class="history__text--italic">Аня:</span> Я закончила керамику в <span class="history__text--italic">МГХПА
-                            имени Строганова</span> в 2014 году. Шесть лет
-                            там училась и постоянно была по уши
-                            в глине. Когда мы с Сашей встретились,
-                            стало сразу же понятно, что нам нужно
-                            делать что-то вместе. Я владела техникой
-                            и знанием технологий, а у Саши был беско-
-                            нечный поток идей и энергии. После того
-                            как студия на <span class="history__text--italic">Арме</span> распалась, Саша
-                            пытал-ся придумать какое-то дело,
-                            которое бы могло помочь
-                            самовыражаться и прино-сило доход.
-                            Ювелирка казалась макси-мально
-                            компактным занятием. Не было денег
-                            снимать помещение, работать при-
-                            ходилось дома. Саша тогда лепил
-                            смешные кольца из пластилина, потом
-                            начал интересоваться технологией, купил
-                            воск специальный ювелирный, подсунул
-                            мне его, сказал: <span class="history__text--italic">«Делай — у тебя
-                            получится».</span>
+            include history/history-two
+
             section.main__collect.collect
-                section.collect__inner.collect-one
-                    h3.collect__title
-                        | Коллекции
-                    div.collection__text
-                        p.
-                            <span class="collection__text--italic">Mineral weather</span> не зря позиционирует себя</br>
-                            как бренд эксперементальных ювелирных</br>
-                            украшений. Обозначение коллекций условно,</br>
-                            поскольку украшения создаются стихийно,</br>
-                            руководствуясь вдохновением и найденными</br>
-                            материалами.
+
+                include collection/collection-one
+
                 div.moving-block__wrap
-                    section.collect__inner.collect-two.moving-block
-                        div.collect-two__container.collect-two__container--left
-                            div.collect-two__container--inner
-                                p.collect-two__copyright
-                                    | Фотограф: <span class="collect-two__copyright--italic">Кирилл Арсеньев</span>
-                                p.collect-two__text.
-                                    Первая съемка коллекции появи-</br>
-                                    лась в 2014 году. Видно, насколько</br>
-                                    она отличается по стилистике от</br>
-                                    нынешних. Вполне логично, что при</br>
-                                    запуске бренда был сделан акцент</br>
-                                    на самих украшениях. Многочислен-</br>
-                                    ные <span class="collect-two__text--italic">фактуры</span>, природные формы</br>
-                                    подчеркивают самобытность и при-</br>
-                                    родные истоки самих украшений.</br>
-                                    Всё в целом образует гармоничный</br>
-                                    <span class="collect-two__text--italic">натюрморт,</span> с действительно мёрт-</br>
-                                    вой природой, представленной</br>
-                                    в виде гниющих фруктов и овощей.
-                            p.collect-two__date.
-                                2014</br>
-                                ОСЕНЬ</br>
-                                /</br>
-                                ЗИМА</br>
-                            img.collect-two__img.moved-image(src="-mg-3348.jpg" width="262" height="175")
-                            img.collect-two__img.moved-image(src="-mg-3723.jpg" width="263" height="175")
-                        div.collect-two__container.collect-two__container--right
-                            img.collect-two__img.moved-image(src="-mg-3283.jpg" width="479" height="292")
-                            img.collect-two__img.moved-image(src="-mg-3317.jpg" width="479" height="285")
-                            img.collect-two__img.moved-image(src="-mg-3417.jpg" width="161" height="108")
+                    include collection/collection-two
+
                 div.moving-block__wrap
-                    section.collect__inner.collect-tree.moving-block
-                        div.collect-tree__container--left
-                            p.collect-tree__copyright
-                                |Фотограф: <span class="collect-tree__copyright--italic">Люся Жаркова</span>
-                            p.collect-tree__text.
-                                Благодаря талантливому фотографу</br>
-                                Люсе для <span class="collect-tree__text--italic">MW</span> в 2015 году появи-</br>
-                                лась первая непредметная съемка.</br>
-                                Она является очень характерной</br>
-                                по атмосфере и духу самого бренда.</br>
-                                Принципиально отсутствие какого-</br>
-                                либо <span class="collect-tree__text--italic">«fashion</span> в данной съемке</br>
-                                и всех последущих. Девушки, запе-</br>
-                                чатленные в украшениях, без маки-</br>
-                                яжа, маникюра и прочего <span class="collect-tree__text--italic">украша-</br>
-                                тельства,</span> которое встречается</br>
-                                в стандартных съемках ювелирных</br>
-                                коллекций. Всё это созвучно с</br>
-                                украшениями, они созданы из</br>
-                                совершенно <span class="collect-tree__text--italic">простых</span> материалов,</br>
-                                но их эстетика и уникальность </br>
-                                завороживает.
-                            p.collect-tree__date.
-                                2015</br>
-                                ВЕСНА</br>
-                                /</br>
-                                ЛЕТО</br>
-                            img.collect-tree__img.moved-image(src="collect-tree--one.jpg" width="159" height="159")
-                            img.collect-tree__img.moved-image(src="collect-tree--two.jpg" width="413" height="202")
-                            img.collect-tree__img.moved-image(src="collect-tree--tree.jpg" width="283" height="304")
-                            img.collect-tree__img.moved-image(src="collect-tree-four.jpg" width="320" height="320")
+                    include collection/collection-tree
 
         script(src="index.js")
