@@ -9,7 +9,9 @@ const clean = require('gulp-clean');
 const gulpsync = require('gulp-sync')(gulp);
 const browsersync = require('browser-sync').create();
 const webpack = require('webpack-stream');
-const named = require ('vinyl-named');
+const named = require('vinyl-named');
+const postcss = require('gulp-postcss');
+const autoprefixer = require('autoprefixer');
 
 const INITIAL = {
   pug: './pug/screens/*.pug',
@@ -65,6 +67,16 @@ gulp.task('style', function () {
     .pipe(plumber())
     .pipe(sourcemap.init())
     .pipe(less())
+    .pipe(postcss([
+        autoprefixer({
+            browsers: [
+                'last 1 version',
+                'last 2 Chrome versions',
+                'last 2 Firefox versions',
+                'last 2 Opera versions',
+                'last 2 Edge versions'
+            ]
+        })]))
     .pipe(sourcemap.write())
     .pipe(gulp.dest(PATH.style.src))
     .pipe(cssmin())
