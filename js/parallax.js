@@ -77,9 +77,12 @@ export default class parallax {
     this.block.style.top = this._fixedCoords.top + `px`;
     this.block.style.left = this._fixedCoords.left + `px`;
 
-    for (let item of this.imageList) {
-      item.move();
+    if (this.imageList) {
+        for (let item of this.imageList) {
+            item.move();
+        }
     }
+
   }
 
   endParallax() {
