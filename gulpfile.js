@@ -14,7 +14,7 @@ const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 
 const INITIAL = {
-  pug: './pug/screens/*.pug',
+  pug: './pug/screens/index.pug',
   less: './less/index.less',
   js: './js/index.js'
 };
