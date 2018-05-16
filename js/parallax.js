@@ -16,7 +16,9 @@ export default class parallax {
     this._endParallax = this.getEndParallaxCoords();
     this.scrollDuration = this._endParallax - this._startParallax;
 
-    this.imgInit();
+    if (model) {
+        this.imgInit();
+    }
   }
 
   setBoxSize() {
@@ -47,6 +49,12 @@ export default class parallax {
       const coords = {};
       coords.top = (window.innerHeight - this.block.scrollHeight) / 2;
       coords.left = this.getElemCoords(this.block).left;
+      return coords;
+    } else {
+      const coords = {
+        top: 0,
+        left: this.getElemCoords(this.block).left
+      }
       return coords;
     }
   }
