@@ -1,0 +1,40 @@
+.collect-two {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 21px;
+
+  &__container--left {
+    position: relative;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    width: 581px;
+    margin-left: 160px;
+    margin-right: 60px;
+  }
+
+  &__container--inner {
+    padding-left: 107px;
+    margin-bottom: 43px;
+  }
+
+
+  &__container--right {
+    position:relative;
+    display: flex;
+    flex-direction: column;
+    width: 479px;
+
+    .collect-two__img:first-child {
+      margin-top: -45px;
+    }
+
+    .collect-two__img:last-child {
+      position: absolute;
+      top: 382px;
+      right: 160px;
+    }
+  }
+}
