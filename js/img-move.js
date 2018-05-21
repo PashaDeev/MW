@@ -55,14 +55,30 @@ export default class ImgMove {
     }
   }
 
+  getScale() {
+    const scale = {};
+      if (this.model.width > this.img.width) {
+          scale.x = this.coef.width - this.coef.scrollWidth * (window.pageYOffset - this.startCoord);
+      } else {
+          scale.x = this.coef.width + this.coef.scrollWidth * (window.pageYOffset - this.startCoord);
+      }
+
+      if (this.model.height > this.img.height) {
+        scale.y =  this.coef.height - this.coef.scrollHeight * (window.pageYOffset - this.startCoord);
+      } else {
+        scale.y = this.coef.height + this.coef.scrollHeight * (window.pageYOffset - this.startCoord);
+      }
+
+      return scale;
+  }
+
   move() {
     let translateX = this.path.x - this.coef.x * (window.pageYOffset - this.startCoord);
     let translateY = this.path.y - this.coef.y * (window.pageYOffset - this.startCoord);
-    let scaleX = this.coef.width - this.coef.scrollWidth * (window.pageYOffset - this.startCoord);
-    let scaleY = this.coef.height - this.coef.scrollHeight * (window.pageYOffset - this.startCoord);
+    let scale = this.getScale();
     this.img.style.transform = 
          `translate(${translateX}px, ${translateY}px)
-          scale(${scaleX}, ${scaleY})`;
+          scale(${scale.x}, ${scale.y})`;
 
     if (this.svg) {
         this.svg.maskMove();
