@@ -1,7 +1,7 @@
 
 import ImgMove from './img-move';
 
-const navBarHeight = 0;
+const navBarHeight = 60;
 
 export default class parallax {
   constructor(block, size, model) {
@@ -49,12 +49,12 @@ export default class parallax {
   getFixedCoords() {
     if (window.innerHeight > this.block.scrollHeight) {
       const coords = {};
-      coords.top = (window.innerHeight - this.block.scrollHeight) / 2 + navBarHeight;
+      coords.top = (window.innerHeight - this.block.scrollHeight) / 2;
       coords.left = this.getElemCoords(this.block).left;
       return coords;
     } else {
       const coords = {
-        top: 0,
+        top: navBarHeight,
         left: this.getElemCoords(this.block).left
       }
       return coords;
