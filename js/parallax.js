@@ -1,7 +1,7 @@
 
 import ImgMove from './img-move';
 
-const navBarHeight = 60;
+const navBarHeight = 0;
 
 export default class parallax {
   constructor(block, size, model) {
