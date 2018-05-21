@@ -89,6 +89,76 @@ export const model = [
             width: 424,
             height: 282
         }
+    ],
+    [
+        {
+            x: -223,
+            y: -34,
+            width: 349,
+            height: 349
+        },
+        {
+            x: -107,
+            y: 58,
+            width: 396,
+            height: 396
+        },
+        {
+            x: -646,
+            y: 160,
+            width: 320,
+            height: 320
+        },
+        {
+            x: -483,
+            y: 58,
+            width: 456,
+            height: 454
+        }
+    ],
+    [
+        {
+            x: -72,
+            y: 76,
+            width: 346,
+            height: 275
+        },
+        {
+            x: -367,
+            y: 194,
+            width: 273,
+            height: 295
+        },
+        {
+            x: -295,
+            y: -12,
+            width: 251,
+            height: 355
+        },
+        {
+            x: 144,
+            y: 13,
+            width: 287,
+            height: 464
+        },
+        {
+            x: -48,
+            y: -45,
+            width: 647,
+            height: 431
+        },
+        {
+            x: -79,
+            y: 3,
+            width: 204,
+            height: 306
+        },
+        {
+            x: -482,
+            y: 121,
+            width: 154,
+            height: 230
+        }
     ]
 ];
 
