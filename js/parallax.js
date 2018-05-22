@@ -49,7 +49,7 @@ export default class parallax {
   getFixedCoords() {
     if (window.innerHeight > this.block.scrollHeight) {
       const coords = {};
-      coords.top = (window.innerHeight - this.block.scrollHeight) / 2;
+      coords.top = navBarHeight + (window.innerHeight - this.block.scrollHeight) / 2;
       coords.left = this.getElemCoords(this.block).left;
       return coords;
     } else {
@@ -90,6 +90,12 @@ export default class parallax {
   endParallax() {
     this.block.style.position = `absolute`;
     this.block.style.top = this._endParallax + this._fixedCoords.top + `px`;
+
+    if (this.imageList) {
+      for (let item of this.imageList) {
+        item.endMove();
+      }
+    }
   }
 
   cancelParallax() {

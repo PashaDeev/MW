@@ -87,4 +87,8 @@ export default class ImgMove {
         this.svg.maskMove();
     }
   }
+
+  endMove() {
+    this.img.style.transform = ``;
+  }
 }
