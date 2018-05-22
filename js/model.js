@@ -148,40 +148,46 @@ export const model = [
             height: 275
         },
         {
-            x: -367,
-            y: 194,
-            width: 273,
-            height: 295
+            x: -368,
+            y: 220,
+            width: 288,
+            height: 434,
+            svg: {
+                type: `polygon`,
+                start: [[53, 11], [64, 4], [96, 13], [96, 72], [1, 72], [1, 1]],
+                end: [[71, 15], [57, 5], [100, 18], [100, 72], [0, 72], [0, 0]]
+            }
         },
         {
             x: -295,
-            y: -12,
+            y: 15,
             width: 251,
             height: 355
         },
         {
-            x: 144,
+            x: 164,
             y: 13,
             width: 287,
             height: 464
         },
         {
             x: -48,
-            y: -45,
+            y: 50,
             width: 647,
             height: 431
         },
         {
-            x: -79,
-            y: 3,
+            x: -69,
+            y: 30,
             width: 204,
-            height: 306
+            height: 306,
+            zIndex: 6
         },
         {
             x: -482,
-            y: 121,
+            y: 145,
             width: 154,
-            height: 230
+            height: 230,
         }
     ],
     [
