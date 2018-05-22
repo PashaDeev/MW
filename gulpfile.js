@@ -49,6 +49,7 @@ gulp.task('default', ['build'], function () {
   gulp.watch(WATCH.html, ['html']);
   gulp.watch(WATCH.style, ['style']);
   gulp.watch(WATCH.js, ['bundle']);
+  gulp.watch([COPY.img, COPY.fonts], ['copy']);
 });
 
 gulp.task('html', function () {
