@@ -44,6 +44,9 @@ export default class ImgMove {
       this.img.style.transform = `translate(${this.path.x}px, ${this.path.y}px) 
                                   scale(${this.coef.width}, ${this.coef.height})`;
       this.img.style.zIndex = this.model.zIndex;
+      if (this.model.position) {
+        this.img.style.position = this.model.position;
+      }
   }
 
   getCoords(elem) {
