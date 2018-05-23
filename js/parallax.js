@@ -49,12 +49,12 @@ export default class parallax {
   getFixedCoords() {
     if (window.innerHeight > this.block.scrollHeight) {
       const coords = {};
-      coords.top = navBarHeight + (window.innerHeight - this.block.scrollHeight) / 2;
+      coords.top = 70; //navBarHeight + (window.innerHeight - this.block.scrollHeight) / 2;
       coords.left = this.getElemCoords(this.block).left;
       return coords;
     } else {
       const coords = {
-        top: navBarHeight,
+        top: 70,
         left: this.getElemCoords(this.block).left
       }
       return coords;
