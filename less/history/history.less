@@ -8,7 +8,7 @@
   display: flex;
   justify-content: space-between;
 
-  width: 1100px;
+  width: 1101px;
   margin: 0 auto;
 }
 
@@ -20,7 +20,7 @@
   justify-content: space-between;
 
   width: 285px;
-  min-height: 427px;
+  height: 427px;
 
   .history__image:nth-child(2) {
     position: absolute;
@@ -67,7 +67,11 @@
 }
 
 .history--two {
-  .history__text pre {
+  .history__container {
+    width: 960px;
+  }
+
+  .history__text {
     width: 320px;
   }
   .history__image-container {
@@ -79,6 +83,7 @@
 
     .history__image:first-child {
       margin-bottom: 34px;
+      clip-path: url(#svg);
   }
   }
 }

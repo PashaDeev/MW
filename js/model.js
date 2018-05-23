@@ -143,12 +143,12 @@ export const model = [
     [
         {
             x: -72,
-            y: 76,
+            y: 110,
             width: 346,
             height: 275
         },
         {
-            x: -368,
+            x: -330,
             y: 220,
             width: 288,
             height: 434,
@@ -159,52 +159,52 @@ export const model = [
             }
         },
         {
-            x: -295,
+            x: -270,
             y: 15,
             width: 251,
             height: 355
         },
         {
             x: 164,
-            y: 13,
+            y: 150,
             width: 287,
             height: 464
         },
         {
-            x: -48,
+            x: 90,
             y: 50,
             width: 647,
             height: 431
         },
         {
-            x: -69,
+            x: -49,
             y: 30,
             width: 204,
             height: 306,
             zIndex: 6
         },
         {
-            x: -482,
-            y: 145,
+            x: -455,
+            y: 148,
             width: 154,
             height: 230,
         }
     ],
     [
         {
-            x: -320,
-            y: 5,
+            x: -303,
+            y: 10,
             width: 212,
             height: 290
         },
         {
-            x: -200,
-            y: -48,
+            x: -180,
+            y: -38,
             width: 170,
             height: 258
         },
         {
-            x: -82,
+            x: -60,
             y: 160,
             width: 588,
             height: 391
@@ -216,7 +216,7 @@ export const model = [
             height: 288
         },
         {
-            x: -235,
+            x: -215,
             y: 250,
             width: 249,
             height: 331,
@@ -265,7 +265,7 @@ export const model = [
         },
         {
             x: -182,
-            y: 40,
+            y: 58,
             width: 452,
             height: 301
         },
