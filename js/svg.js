@@ -1,9 +1,12 @@
+import SvgPath from './svg-path';
+
 export default class svg {
     constructor(img, mask, duration, startCoord) {
         this.img = img;
         this.mask = mask;
         this.duration = duration;
         this.startCoord = startCoord;
+        this.svgPath = null;
 
         this.path = this.getPath();
         this.coef = this.getCoef();
@@ -38,8 +41,11 @@ export default class svg {
     }
 
     initMask() {
-        if (this.mask.type == `polygon`) {
+        if (this.mask.type === `polygon`) {
             this.img.style.clipPath = `polygon(${this.getMask(this.mask.start)})`;
+        } else if (this.mask.type === `path`) {
+            this.svgPath = new SvgPath(this.img, this.mask, this.duration, this.startCoord);
+            this.svgPath.init();
         }
     }
 
@@ -52,7 +58,12 @@ export default class svg {
 
         if (this.mask.type == `polygon`) {
             this.img.style.clipPath = `polygon(${this.getMask(points)})`;
+        } else {
+            this.svgPath.svgPathMove();
         }
+
+
+
 
     }
 }
