@@ -11,7 +11,7 @@ export default class controller {
     this.blokArr = [];
     let count = 0;
     for (let item of this.blocks) {
-      this.blokArr[count] = new parallax(item, 2000, this.model[count]);
+      this.blokArr[count] = new parallax(item, this.model[count].duration, this.model[count]);
       ++count;
     }
     this.blokArr;
