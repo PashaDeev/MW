@@ -57,7 +57,9 @@ export default class svg {
         });
 
         if (this.mask.type == `polygon`) {
-            this.img.style.clipPath = `polygon(${this.getMask(points)})`;
+            let maskPoints = this.getMask(points);
+            this.img.style.clipPath = `polygon(${maskPoints})`;
+            this.img.style.webkitClipPath = `polygon(${maskPoints})`
         } else {
             this.svgPath.svgPathMove();
         }

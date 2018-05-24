@@ -5,7 +5,6 @@ export default class SvgPath{
         this.mask = mask;
         this.duration = duration;
         this.startCoord = startCoord;
-        this.svgPath = null;
 
         this.path = this.getPath();
         this.coef = this.getCoef();
@@ -58,22 +57,14 @@ export default class SvgPath{
                 </defs>`
     }
 
-    setContainer() {
-        this.container = document.createElement(`div`);
-        this.container.className = `svg-container`;
-        this.container.style.width = `0px`;
-        this.container.style.height = `0px`;
-        document.body.appendChild(this.container);
-    }
-
     init() {
-        //this.setContainer();
 
         this.svg = document.createElementNS("http://www.w3.org/2000/svg","svg");
         this.svg.innerHTML = this.getTemlate(this.mask.start);
         document.body.appendChild(this.svg);
 
-        this.img.style.clipPath = `url(#${this.mask.id})`
+        this.img.style.clipPath = `url(#${this.mask.id})`;
+        this.img.style.webkitClipPath = `url(#${this.mask.id})`;
     }
 
     svgPathMove() {
