@@ -90,9 +90,7 @@ gulp.task('bundle', function () {
   return gulp.src(INITIAL.js)
     .pipe(plumber())
     .pipe(named())
-    .pipe(webpack({
-      devtool: 'source-map'
-    }))
+    .pipe(webpack( require('./webpack.config') ))
     .pipe(gulp.dest(PATH.build))
     .pipe(browsersync.stream())
 });
