@@ -1,7 +1,6 @@
 
 import ImgMove from './img-move';
 
-const navBarHeight = 60;
 
 export default class parallax {
   constructor(block, size = 2000, model) {
@@ -19,7 +18,7 @@ export default class parallax {
     this.scrollDuration = this._endParallax - this._startParallax;
 
     if (this.model.images) {
-        this.imgInit();
+      this.imgInit();
     }
   }
 
@@ -43,14 +42,14 @@ export default class parallax {
     return {
       top: relCoords.top + window.pageYOffset,
       left: relCoords.left + window.pageXOffset
-    }
+    };
   }
 
   getFixedCoords() {
-      const coords = {};
-      coords.top = 70; //navBarHeight + (window.innerHeight - this.block.scrollHeight) / 2;
-      coords.left = this.getElemCoords(this.block).left;
-      return coords;
+    const coords = {};
+    coords.top = 70;
+    coords.left = this.getElemCoords(this.block).left;
+    return coords;
   }
 
   getStartParallaxCoords() {
@@ -72,9 +71,9 @@ export default class parallax {
     this.block.style.left = this._fixedCoords.left + `px`;
 
     if (this.imageList) {
-        for (let item of this.imageList) {
-            item.move();
-        }
+      for (let item of this.imageList) {
+        item.move();
+      }
     }
 
   }

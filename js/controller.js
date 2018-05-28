@@ -1,20 +1,18 @@
-import parallax from './parallax';
+import Parallax from './parallax';
 
 export default class controller {
   constructor(blocks, model) {
     this.model = model;
     this.blocks = blocks;
-    //this.svg = [];
   }
 
   blocksInit() {
     this.blokArr = [];
     let count = 0;
     for (let item of this.blocks) {
-      this.blokArr[count] = new parallax(item, this.model[count].duration, this.model[count]);
+      this.blokArr[count] = new Parallax(item, this.model[count].duration, this.model[count]);
       ++count;
     }
-    this.blokArr;
   }
 
   start() {
@@ -27,7 +25,7 @@ export default class controller {
           if (window.pageYOffset > item._startParallax && window.pageYOffset < item._endParallax) {
             item.startParallax();
           }
-    
+
           if (window.pageYOffset > item._endParallax) {
             item.endParallax();
           }
@@ -35,6 +33,6 @@ export default class controller {
           item.cancelParallax();
         }
       }
-      });
+    });
   }
 }
