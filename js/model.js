@@ -331,3 +331,26 @@ export const model = [
     ]
   }
 ];
+
+export const timelineElements = [
+  {
+    active: `2014`,
+    disabled: `/14`
+  },
+  {
+    active: `2015`,
+    disabled: `/15`
+  },
+  {
+    active: `2016`,
+    disabled: `/16`
+  },
+  {
+    active: `2017`,
+    disabled: `/17`
+  },
+  {
+    active: `2018`,
+    disabled: `/18`
+  }
+];

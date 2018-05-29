@@ -6,6 +6,3 @@ const blocks = document.querySelectorAll(`.moving-block`);
 
 new Controller(blocks, model).start();
 
-new timeline().init();
-
-

@@ -1,30 +1,27 @@
-export default class timeline {
-  constructor() {
-    this.timeline = document.querySelector(`.timeline`);
 
+import React from 'react';
+import ReactDom from 'react-dom';
+import {timelineElements} from "./model";
+
+class TimelineItem extends React.Component {
+  render() {
+    return <li>
+      <a href="#">{this.props.name}</a>
+    </li>;
   }
+}
 
-  start() {
-    this.timeline.style.display = `block`;
-  }
-
-  end() {
-    this.timeline.style.display = `none`;
-  }
-
-  startCoord() {
-    let collect = document.querySelector(`.start-timeline`);
-    const coord = collect.getBoundingClientRect();
-    return coord.top + window.pageYOffset + 600;
-  }
-
-  init() {
-    document.addEventListener(`scroll`, () => {
-      if (pageYOffset >= this.startCoord()) {
-        this.start();
-      } else {
-        this.end();
+export default class Timeline extends React.Component {
+  render() {
+    return (<ul className="timeline">
+      {timelineElements.map((item, index) => {
+        if (index === 0) {
+          return (<TimelineItem key={item.disabled.toString()} name={item.active}/>);
+        } else {
+          return (<TimelineItem key={item.disabled.toString()} name={item.disabled}/>);
+        }
+      })
       }
-    });
+    </ul>);
   }
 }

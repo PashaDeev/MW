@@ -1,4 +1,7 @@
 import Parallax from './parallax';
+import Timeline from './timeline';
+import React from 'react';
+import ReactDom from 'react-dom';
 
 export default class controller {
   constructor(blocks, model) {
@@ -15,8 +18,16 @@ export default class controller {
     }
   }
 
+  timelineInit() {
+    ReactDom.render(
+      <Timeline/>,
+      document.getElementById(`timeline`)
+    );
+  }
+
   start() {
     this.blocksInit();
+    this.timelineInit();
 
     document.addEventListener(`scroll`, () => {
       for (let item of this.blokArr) {
