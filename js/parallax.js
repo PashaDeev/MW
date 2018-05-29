@@ -47,7 +47,7 @@ export default class parallax {
 
   getFixedCoords() {
     const coords = {};
-    coords.top = 70;
+    coords.top = 140;
     coords.left = this.getElemCoords(this.block).left;
     return coords;
   }
