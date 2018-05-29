@@ -29,12 +29,18 @@ export default class controller {
 
     let fixed = document.querySelector(`.collect-six > .collection__container`).getBoundingClientRect();
     fixed = {
-      top: this.blockArr[this.blockArr.length - 1]._endParallax - this.blockArr[3]._startParallax,
+      top: 47,
       left: fixed.left
     };
 
+    let containerParam = document.querySelector(`.timeline__container`).getBoundingClientRect();
+    containerParam = {
+      top: containerParam.top + window.pageYOffset,
+      height: containerParam.height
+    };
+
     ReactDom.render(
-      <Timeline coords={timelineCoords} fixed={fixed}/>,
+      <Timeline coords={timelineCoords} fixed={fixed} parentBlock={containerParam}/>,
       document.getElementById(`timeline`)
     );
   }

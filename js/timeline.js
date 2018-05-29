@@ -16,11 +16,12 @@ export default class Timeline extends React.Component {
     super(props);
     this.blockCoords = props.coords;
     this.fixed = props.fixed;
+    this.parentBlock = props.parentBlock;
     this.state = {
       currentBlock: 0,
       position: `absolute`,
       top: 0,
-      left: 0,
+      left: 0
     };
     this.onDocScroll = this.onDocScroll.bind(this);
   }
@@ -31,45 +32,55 @@ export default class Timeline extends React.Component {
       this.setState({
         currentBlock: 0,
         position: `absolute`,
-        top: 0,
-        left: 0
+        top: this.fixed.top,
+        left: 160
       });
-    } else if (this.blockCoords[0] < window.pageYOffset && window.pageYOffset < this.blockCoords[1]) {
+    } else if (window.pageYOffset > this.blockCoords[0] && window.pageYOffset < this.blockCoords[1]) {
       this.setState({
         currentBlock: 0,
         position: `fixed`,
-        top: 117,
+        top: this.fixed.top + 70,
         left: this.fixed.left
       });
-    } else if (this.blockCoords[1] < window.pageYOffset && window.pageYOffset < this.blockCoords[2]) {
+    } else if (window.pageYOffset > this.blockCoords[1] && window.pageYOffset < this.blockCoords[2]) {
       this.setState({
         currentBlock: 1,
         position: `fixed`,
-        top: 117,
+        top: this.fixed.top + 70,
         left: this.fixed.left
       });
-    } else if (this.blockCoords[2] < window.pageYOffset && window.pageYOffset < this.blockCoords[3]) {
+    } else if (window.pageYOffset > this.blockCoords[2] && window.pageYOffset < this.blockCoords[3]) {
       this.setState({
         currentBlock: 2,
         position: `fixed`,
-        top: 117,
+        top: this.fixed.top + 70,
         left: this.fixed.left
       });
-    } else if (this.blockCoords[3] < window.pageYOffset && window.pageYOffset < this.blockCoords[4]) {
+    } else if (window.pageYOffset > this.blockCoords[3] && window.pageYOffset < this.blockCoords[4]) {
       this.setState({
         currentBlock: 3,
         position: `fixed`,
-        top: 117,
+        top: this.fixed.top + 70,
         left: this.fixed.left
       });
-    } else if (this.blockCoords[4] < window.pageYOffset) {
+    } else if (window.pageYOffset > this.blockCoords[4]) {
       this.setState({
         currentBlock: 4,
         position: `fixed`,
-        top: 117,
+        top: this.fixed.top + 70,
         left: this.fixed.left
       });
     }
+
+    if (window.pageYOffset > this.parentBlock.top + (this.parentBlock.height - 730)) {
+      this.setState({
+        currentBlock: 4,
+        position: `absolute`,
+        top: this.parentBlock.height - 623,
+        left: 160
+      });
+    }
+
   }
 
   componentDidMount() {
