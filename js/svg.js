@@ -66,4 +66,8 @@ export default class svg {
     }
 
   }
+
+  endMove() {
+    this.img.style.clipPath = `polygon(${this.getMask(this.mask.end)})`;
+  }
 }

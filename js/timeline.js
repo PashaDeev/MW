@@ -20,7 +20,7 @@ export default class Timeline extends React.Component {
     this.state = {
       currentBlock: 0,
       position: `absolute`,
-      top: 0,
+      top: 140,
       left: 0
     };
     this.onDocScroll = this.onDocScroll.bind(this);
@@ -28,46 +28,48 @@ export default class Timeline extends React.Component {
 
   onDocScroll() {
 
+    const padding = 143;
+
     if (window.pageYOffset < this.blockCoords[0]) {
       this.setState({
         currentBlock: 0,
         position: `absolute`,
-        top: this.fixed.top,
+        top: padding,
         left: 160
       });
     } else if (window.pageYOffset > this.blockCoords[0] && window.pageYOffset < this.blockCoords[1]) {
       this.setState({
         currentBlock: 0,
         position: `fixed`,
-        top: this.fixed.top + 70,
+        top: padding,
         left: this.fixed.left
       });
     } else if (window.pageYOffset > this.blockCoords[1] && window.pageYOffset < this.blockCoords[2]) {
       this.setState({
         currentBlock: 1,
         position: `fixed`,
-        top: this.fixed.top + 70,
+        top: padding,
         left: this.fixed.left
       });
     } else if (window.pageYOffset > this.blockCoords[2] && window.pageYOffset < this.blockCoords[3]) {
       this.setState({
-        currentBlock: 2,
+        currentBlock: 1,
         position: `fixed`,
-        top: this.fixed.top + 70,
+        top: padding,
         left: this.fixed.left
       });
     } else if (window.pageYOffset > this.blockCoords[3] && window.pageYOffset < this.blockCoords[4]) {
       this.setState({
-        currentBlock: 3,
+        currentBlock: 2,
         position: `fixed`,
-        top: this.fixed.top + 70,
+        top: padding,
         left: this.fixed.left
       });
     } else if (window.pageYOffset > this.blockCoords[4]) {
       this.setState({
-        currentBlock: 4,
+        currentBlock: 2,
         position: `fixed`,
-        top: this.fixed.top + 70,
+        top: padding,
         left: this.fixed.left
       });
     }
@@ -114,3 +116,4 @@ export default class Timeline extends React.Component {
     );
   }
 }
+

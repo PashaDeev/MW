@@ -4,30 +4,22 @@ export const model = [
     blockId: `history-one`,
     images: [
       {
-        x: 155,
-        y: 134,
-        width: 415,
-        height: 277,
+        x: 210,
+        y: 127,
+        width: 419,
+        height: 279,
         zIndex: 0
       },
       {
-        x: 491,
-        y: 307,
-        width: 258,
-        height: 172,
-        zIndex: 3,
-        absolute: true
-      },
-      {
-        x: 554,
-        y: 30,
-        width: 414,
-        height: 277,
+        x: 635,
+        y: 65,
+        width: 539,
+        height: 361,
         zIndex: 0
       },
       {
-        x: -255,
-        y: -10,
+        x: -242,
+        y: -72,
         width: 317,
         height: 478,
         zIndex: 2,
@@ -43,8 +35,8 @@ export const model = [
     blockId: `history-two`,
     images: [
       {
-        x: -20,
-        y: 150,
+        x: 50,
+        y: 125,
         width: 750,
         height: 504,
         zIndex: 0,
@@ -80,8 +72,8 @@ export const model = [
         }
       },
       {
-        x: -159,
-        y: 100,
+        x: -96,
+        y: 75,
         width: 559,
         height: 372,
         zIndex: 1,
@@ -101,8 +93,8 @@ export const model = [
     blockId: `collection-two`,
     images: [
       {
-        x: -994,
-        y: 107,
+        x: -965,
+        y: 90,
         width: 260,
         height: 173,
         svg: {
@@ -112,14 +104,14 @@ export const model = [
         }
       },
       {
-        x: -161,
-        y: -20,
+        x: -190,
+        y: -40,
         width: 425,
         height: 252
       },
       {
-        x: 165,
-        y: 293,
+        x: 152,
+        y: 265,
         width: 242,
         height: 160,
         zIndex: 2
@@ -138,7 +130,7 @@ export const model = [
         }
       },
       {
-        x: 490,
+        x: 485,
         y: -100,
         width: 424,
         height: 282,
@@ -170,11 +162,41 @@ export const model = [
         x: -646,
         y: 160,
         width: 320,
-        height: 320
+        height: 320,
+        svg: {
+          type: `path`,
+          id: `collect-tree`,
+          translate: {
+            x: 0,
+            y: 0
+          },
+          start: [
+            [`M`, [1.9, 156.5]],
+            [`h`, [154.4]],
+            [`c`, [3.7, -40.7, 0.4, -64.5, -9.8, -71.5]],
+            [`c`, [-15.3, -10.4, -21.6, 20.8, -34.6, 10.4]],
+            [`s`, [21.6, -60.9, 15, -75.7]],
+            [`C`, [120.2, 4.8, 102.5, -1.8, 66.2, 6.8]],
+            [`s`, [-50.1, 37.7, -58, 63.6]],
+            [`C`, [2.9, 87.7, 0.8, 116.4, 1.9, 156.5]],
+            [`z`]
+          ],
+          end: [
+            [`M`, [1.9, 156.5]],
+            [`h`, [166]],
+            [`c`, [3.7, -40.7, 9.2, -77.5, -1, -84.5]],
+            [`c`, [-15.3, -10.4, 16.1, -20.6, 3.1, -31]],
+            [`s`, [3.5, -26.2, -3.1, -41]],
+            [`C`, [158.3, -14.9, 48.3, -15.4, 12-6.8]],
+            [`S`, [-1.1, 53.6, -9, 79.5]],
+            [`C`, [-14.3, 96.8, 0.8, 116.4, 1.9, 156.5]],
+            [`z`]
+          ]
+        }
       },
       {
-        x: -483,
-        y: 58,
+        x: -475,
+        y: 85,
         width: 456,
         height: 454,
         svg: {
@@ -189,14 +211,14 @@ export const model = [
     blockId: `collection-four`,
     images: [
       {
-        x: -72,
-        y: 110,
+        x: 0,
+        y: 130,
         width: 346,
         height: 275
       },
       {
         x: -330,
-        y: 220,
+        y: 230,
         width: 288,
         height: 434,
         svg: {
@@ -212,27 +234,14 @@ export const model = [
         height: 355
       },
       {
-        x: 164,
-        y: 150,
-        width: 287,
-        height: 464
+        x: 70,
+        y: 200,
+        width: 585,
+        height: 424
       },
       {
-        x: 90,
-        y: 50,
-        width: 647,
-        height: 431
-      },
-      {
-        x: -49,
-        y: 30,
-        width: 204,
-        height: 306,
-        zIndex: 6
-      },
-      {
-        x: -455,
-        y: 148,
+        x: -460,
+        y: 155,
         width: 154,
         height: 230,
       }
@@ -242,34 +251,34 @@ export const model = [
     blockId: `collection-five`,
     images: [
       {
-        x: -303,
-        y: 10,
+        x: -650,
+        y: 20,
         width: 212,
         height: 290
       },
       {
-        x: -180,
-        y: -38,
+        x: -135,
+        y: -58,
         width: 170,
         height: 258
       },
       {
-        x: -60,
-        y: 160,
+        x: -70,
+        y: 165,
         width: 588,
         height: 391
       },
       {
-        x: 93,
+        x: -405,
         y: 11,
         width: 229,
         height: 288
       },
       {
-        x: -215,
-        y: 250,
-        width: 249,
-        height: 331,
+        x: -315,
+        y: 225,
+        width: 282,
+        height: 378,
         svg: {
           type: `polygon`,
           start: [[100, 0], [87, 57], [100, 42], [100, 73], [95, 100], [8, 100], [40, 0], [58, 10]],
@@ -282,22 +291,22 @@ export const model = [
     blockId: `collection-six`,
     images: [
       {
-        x: 130,
-        y: 0,
+        x: 147,
+        y: 15,
         width: 277,
         height: 419
       },
       {
-        x: -283,
-        y: 100,
+        x: -315,
+        y: 138,
         width: 174,
         height: 228
       },
       {
-        x: -222,
-        y: 44,
-        width: 225,
-        height: 188,
+        x: -286,
+        y: -53,
+        width: 240,
+        height: 201,
         svg: {
           type: `polygon`,
           start: [[80, 0], [100, 30], [50, 42], [96, 55], [11, 46], [0, 52], [0, 0]],
@@ -305,14 +314,14 @@ export const model = [
         }
       },
       {
-        x: 173,
-        y: 100,
+        x: 200,
+        y: 110,
         width: 262,
         height: 399
       },
       {
-        x: -64,
-        y: 250,
+        x: -33,
+        y: 238,
         width: 360,
         height: 293
       },
@@ -323,8 +332,8 @@ export const model = [
         height: 301
       },
       {
-        x: -350,
-        y: 165,
+        x: -360,
+        y: 245,
         width: 165,
         height: 247
       }

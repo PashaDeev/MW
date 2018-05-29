@@ -89,5 +89,8 @@ export default class ImgMove {
 
   endMove() {
     this.img.style.transform = ``;
+    if (this.svg) {
+      this.svg.endMove();
+    }
   }
 }
