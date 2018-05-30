@@ -35,51 +35,50 @@ export default class Timeline extends React.Component {
         currentBlock: 0,
         position: `absolute`,
         top: padding,
-        left: 160
+        left: 155
       });
     } else if (window.pageYOffset > this.blockCoords[0] && window.pageYOffset < this.blockCoords[1]) {
       this.setState({
         currentBlock: 0,
         position: `fixed`,
         top: padding,
-        left: this.fixed.left
+        left: this.fixed.left - 5
       });
     } else if (window.pageYOffset > this.blockCoords[1] && window.pageYOffset < this.blockCoords[2]) {
       this.setState({
         currentBlock: 1,
         position: `fixed`,
         top: padding,
-        left: this.fixed.left
+        left: this.fixed.left - 5
       });
     } else if (window.pageYOffset > this.blockCoords[2] && window.pageYOffset < this.blockCoords[3]) {
       this.setState({
         currentBlock: 1,
         position: `fixed`,
         top: padding,
-        left: this.fixed.left
+        left: this.fixed.left - 5
       });
     } else if (window.pageYOffset > this.blockCoords[3] && window.pageYOffset < this.blockCoords[4]) {
       this.setState({
         currentBlock: 2,
         position: `fixed`,
         top: padding,
-        left: this.fixed.left
+        left: this.fixed.left - 5
       });
     } else if (window.pageYOffset > this.blockCoords[4]) {
       this.setState({
         currentBlock: 2,
         position: `fixed`,
         top: padding,
-        left: this.fixed.left
+        left: this.fixed.left - 5
       });
     }
 
-    if (window.pageYOffset > this.parentBlock.top + (this.parentBlock.height - 730)) {
+    if (window.pageYOffset > this.parentBlock.top + (this.parentBlock.height - 660)) {
       this.setState({
-        currentBlock: 4,
         position: `absolute`,
-        top: this.parentBlock.height - 623,
-        left: 160
+        top: this.parentBlock.height - 523,
+        left: 155
       });
     }
 
