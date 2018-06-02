@@ -47,6 +47,7 @@ export default class ImgMove {
     if (this.model.position) {
       this.img.style.position = this.model.position;
     }
+
   }
 
   getCoords(elem) {
@@ -76,11 +77,13 @@ export default class ImgMove {
   }
 
   move() {
-    let translateX = this.path.x - this.coef.x * (window.pageYOffset - this.startCoord);
-    let translateY = this.path.y - this.coef.y * (window.pageYOffset - this.startCoord);
-    let scale = this.getScale();
-    this.img.style.transform = `translate(${translateX}px, ${translateY}px)
+    if (!this.img.classList.contains(`full-screen`)) {
+      let translateX = this.path.x - this.coef.x * (window.pageYOffset - this.startCoord);
+      let translateY = this.path.y - this.coef.y * (window.pageYOffset - this.startCoord);
+      let scale = this.getScale();
+      this.img.style.transform = `translate(${translateX}px, ${translateY}px)
                                 scale(${scale.x}, ${scale.y})`;
+    }
 
     if (this.svg) {
       this.svg.maskMove();
@@ -92,5 +95,9 @@ export default class ImgMove {
     if (this.svg) {
       this.svg.endMove();
     }
+  }
+
+  fullScreen() {
+
   }
 }
