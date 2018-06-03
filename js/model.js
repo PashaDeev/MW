@@ -428,7 +428,33 @@ export const model = [
     ]
   },
   {
-    blockId: `collection-seven`
+    blockId: `collection-seven`,
+    images: [
+      {
+        x: -324,
+        y: -26,
+        width: 324,
+        height: 264
+      },
+      {
+        x: -420,
+        y: 210,
+        width: 488,
+        height: 273
+      },
+      {
+        x: 69,
+        y: 8,
+        width: 284,
+        height: 189
+      },
+      {
+        x: -263,
+        y: 146,
+        width: 451,
+        height: 300
+      }
+    ]
   }
 ];
 
