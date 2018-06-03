@@ -458,7 +458,11 @@ export const model = [
   },
   {
     blockId: `collect-eight`,
-    duration: null
+    duration: 2000
+  },
+  {
+    blockId: `collect-nein`,
+    duration: 2000
   }
 ];
 
