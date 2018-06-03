@@ -426,6 +426,9 @@ export const model = [
         height: 247
       }
     ]
+  },
+  {
+    blockId: `collection-seven`
   }
 ];
 

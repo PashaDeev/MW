@@ -29,48 +29,49 @@ export default class Timeline extends React.Component {
   onDocScroll() {
 
     const padding = 143;
+    const plus = 4;
 
     if (window.pageYOffset < this.blockCoords[0]) {
       this.setState({
         currentBlock: 0,
         position: `absolute`,
         top: padding,
-        left: 155
+        left: 163
       });
     } else if (window.pageYOffset > this.blockCoords[0] && window.pageYOffset < this.blockCoords[1]) {
       this.setState({
         currentBlock: 0,
         position: `fixed`,
         top: padding,
-        left: this.fixed.left - 5
+        left: this.fixed.left + plus
       });
     } else if (window.pageYOffset > this.blockCoords[1] && window.pageYOffset < this.blockCoords[2]) {
       this.setState({
         currentBlock: 1,
         position: `fixed`,
         top: padding,
-        left: this.fixed.left - 5
+        left: this.fixed.left + plus
       });
     } else if (window.pageYOffset > this.blockCoords[2] && window.pageYOffset < this.blockCoords[3]) {
       this.setState({
         currentBlock: 1,
         position: `fixed`,
         top: padding,
-        left: this.fixed.left - 5
+        left: this.fixed.left + plus
       });
     } else if (window.pageYOffset > this.blockCoords[3] && window.pageYOffset < this.blockCoords[4]) {
       this.setState({
         currentBlock: 2,
         position: `fixed`,
         top: padding,
-        left: this.fixed.left - 5
+        left: this.fixed.left + plus
       });
     } else if (window.pageYOffset > this.blockCoords[4]) {
       this.setState({
         currentBlock: 2,
         position: `fixed`,
         top: padding,
-        left: this.fixed.left - 5
+        left: this.fixed.left + plus
       });
     }
 
