@@ -455,6 +455,10 @@ export const model = [
         height: 300
       }
     ]
+  },
+  {
+    blockId: `collect-eight`,
+    duration: null
   }
 ];
 
