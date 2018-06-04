@@ -58,13 +58,13 @@ export const model = [
     images: [
       {
         x: -223,
-        y: -34,
+        y: -21,
         width: 349,
         height: 349,
       },
       {
-        x: -87,
-        y: 48,
+        x: -57,
+        y: 90,
         width: 396,
         height: 396,
         svg: {
@@ -74,8 +74,8 @@ export const model = [
         }
       },
       {
-        x: -646,
-        y: 160,
+        x: -612,
+        y: 200,
         width: 320,
         height: 320,
         svg: {
@@ -110,8 +110,8 @@ export const model = [
         }
       },
       {
-        x: -475,
-        y: 85,
+        x: -495,
+        y: 20,
         width: 456,
         height: 454,
         svg: {
@@ -126,8 +126,8 @@ export const model = [
     blockId: `collection-four`,
     images: [
       {
-        x: 0,
-        y: 130,
+        x: -5,
+        y: 127,
         width: 346,
         height: 275
       },
@@ -143,13 +143,13 @@ export const model = [
         }
       },
       {
-        x: -270,
+        x: -280,
         y: 15,
         width: 251,
         height: 355
       },
       {
-        x: 70,
+        x: 90,
         y: 200,
         width: 585,
         height: 424,
@@ -297,8 +297,8 @@ export const model = [
       {
         x: -33,
         y: 238,
-        width: 360,
-        height: 293,
+        width: 378,
+        height: 254,
         svg: {
           type: `path`,
           id: `collect-six`,
